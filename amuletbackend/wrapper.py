@@ -68,9 +68,9 @@ class AmuletChunkCopyProcess(AmuletProcess):
             path=str(self.level.path.as_posix()),
             sourceClass=type(self.source).__name__,
             sourceDimension=self.source_dim,
-            sourceSelectionMin=list(self.source_selection.min_array),
-            sourceSelectionMax=list(self.source_selection.max_array),
-            targetClass=type(self.source).__name__,
+            sourceSelectionMin=self.source_selection.min_array.astype(int).tolist(),
+            sourceSelectionMax=self.source_selection.max_array.astype(int).tolist(),
+            targetClass=type(self.target).__name__,
             targetDimension=self.target_dim,
         )
 
